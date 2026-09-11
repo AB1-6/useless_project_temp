@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --font-retro: "Press Start 2P", monospace;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-hand: "Caveat", cursive;
+}
+
+:root {
+  --bg-deep: #0b0f19;
+  --bg-card: #121929;
+  --bg-card-border: rgba(255, 255, 255, 0.08);
+  --cyan: #00f0ff;
+  --blue-brand: #3b82f6;
+  --amber-yellow: #fde047;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bg-deep);
+  color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Typography */
+.font-retro {
+  font-family: 'Press Start 2P', monospace !important;
+}
+.font-heading {
+  font-family: 'Outfit', sans-serif !important;
+}
+.font-handwritten {
+  font-family: 'Caveat', cursive !important;
+}
+
+/* Reference Card Style matching panels 2, 3, 5, 7, 8 */
+.ref-card {
+  background: #111726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.ref-card-glow {
+  background: #111726;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Yellow Handwritten Annotation Accent */
+.handwritten-note {
+  font-family: 'Caveat', cursive;
+  color: #fef08a;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  text-shadow: 0 0 8px rgba(253, 224, 71, 0.3);
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Scenery Environmental Keyframe Animations */
+@keyframes leafSway {
+  0%, 100% { transform: rotate(0deg) translateY(0px); }
+  50% { transform: rotate(3deg) translateY(2px); }
+}
+
+@keyframes leafDrift {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.9; }
+  50% { transform: translate(12px, 28px) rotate(40deg); opacity: 0.7; }
+  100% { transform: translate(-8px, 60px) rotate(85deg); opacity: 0; }
+}
+
+@keyframes lampGlow {
+  0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.95)); }
+}
+
+@keyframes fanSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes mistDrift {
+  0%, 100% { transform: translateX(0) scaleY(1); opacity: 0.4; }
+  50% { transform: translateX(6px) scaleY(1.15); opacity: 0.75; }
+}
+
+.anim-leaf-sway {
+  animation: leafSway 4.5s ease-in-out infinite;
+}
+
+.anim-leaf-drift-1 {
+  animation: leafDrift 5s ease-in-out infinite;
+}
+
+.anim-leaf-drift-2 {
+  animation: leafDrift 6.5s ease-in-out infinite 1.8s;
+}
+
+.anim-leaf-drift-3 {
+  animation: leafDrift 5.8s ease-in-out infinite 3.2s;
+}
+
+.anim-lamp-glow {
+  animation: lampGlow 3s ease-in-out infinite;
+}
+
+.anim-fan-spin {
+  animation: fanSpin 2.2s linear infinite;
+}
+
+.anim-mist {
+  animation: mistDrift 3.5s ease-in-out infinite;
+}
+
